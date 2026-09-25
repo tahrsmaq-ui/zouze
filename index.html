@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zouze ✨</title>
+  <style>
+    :root {
+      --primary-glow: #e11d48;
+      --secondary-glow: #8b5cf6;
+      --bg-dark: #07090e;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text-main: #ffffff;
+      --text-sub: #fda4af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(225, 29, 72, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.25) 0%, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .main-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 28px;
+      padding: 2.5rem 1.8rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+                  0 0 30px rgba(225, 29, 72, 0.15);
+    }
+
+    .header-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #fff 30%, var(--text-sub));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* حاوية الميديا (الصور والفيديو) */
+    .media-container {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.4);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .media-item {
+      display: none;
+      width: 100%;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .media-item.active {
+      display: block;
+    }
+
+    .media-item img, 
+    .media-item video {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      display: block;
+      border-radius: 18px;
+    }
+
+    /* صندوق الكلام الحلو */
+    .quote-display {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 1.8rem 1.2rem;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .quote-text {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: #ffe4e6;
+      font-weight: 500;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* الأزرار التفاعلية */
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 0.8rem 1.4rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(225, 29, 72, 0.25);
+      border-color: var(--primary-glow);
+      transform: translateY(-2px);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(135deg, #e11d48, #8b5cf6);
+      border-color: transparent;
+      box-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .main-card { padding: 1.8rem 1rem; }
+      h1 { font-size: 1.8rem; }
+      .quote-text { font-size: 1.1rem; }
+      .nav-btn { padding: 0.65rem 1rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-card">
+    <div class="header-icon">✨</div>
+    <h1>حنين</h1>
+    <p class="subtitle">كلمات وصور صُممت لعينيكِ خصيصاً</p>
+
+    <!-- معرض عرض الصور والفيديو -->
+    <div class="media-container">
+      <!-- الصورة الأولى -->
+      <div class="media-item active">
+        <img src="a.png" alt="الصورة الأولى">
+      </div>
+      
+      <!-- الصورة الثانية -->
+      <div class="media-item">
+        <img src="b.png" alt="الصورة الثانية">
+      </div>
+      
+      <!-- الفيديو -->
+      <div class="media-item">
+        <video id="myVideo" controls>
+          <source src="v.mp4" type="video/mp4">
+          المتصفح لا يدعم تشغيل الفيديو.
+        </video>
+      </div>
+    </div>
+
+    <!-- صندوق الكلام الحلو -->
+    <div class="quote-display">
+      <p class="quote-text" id="quoteText"></p>
+    </div>
+
+    <!-- الأزرار التفاعلية -->
+    <div class="nav-buttons">
+      <button class="nav-btn active" onclick="showTab(0)">النظرة الأولى 👁️</button>
+      <button class="nav-btn" onclick="showTab(1)">شامة قلبي  ✨</button>
+      <button class="nav-btn" onclick="showTab(2)">سرّك الخاص 🎥</button>
+    </div>
+  </div>
+
+  <script>
+    // الكلام الحلو المخصص لكل خيار
+ const quotes = [
+      "بتعرفي شو الغريب بهالصورة؟\nإنها مو مجرد صورة لعيونك بالنسبة إلي\nهاي الصورة بتذكرني بأول لحظة شفت فيها عيونك\nاللحظة اللي ما كنت بعرف فيها إنو نظرة صغيرة ممكن تضل معلقة براسي لهالدرجة\n\nمن أول مرة شفت عيونك حسيت إنو في شي مختلف\nمو لأنو العيون حلوة وبس\nلأنو كان فيها شي ما قدرت فسّرو\nشي خلاني أرجع أتطلع مرة ومرتين وكأني عم حاول أفهم شو السر اللي مخبيتهن\n\nومن وقتها صرت مقتنع إنو في عيون ما بتنشاف مرة وبتنحفظ بالصورة\nفي عيون بتنشاف مرة وبتضل ساكنة بالذاكرة\n\nوعيونك من النوع التاني\nالنوع اللي ما بيخلص تأثيره لما تخلص النظرة\nبالعكس\nبتبلش الحكاية بعدها",
+
+      "كنت مفكر إنو عيونك لحالها كافية لتسرق كل الانتباه\nبعدين شفت هالصورة\nواكتشفت إنو حتى التفاصيل الصغيرة فيكي عندها قدرة تعمل مشكلة بقلبي\n\nهالشامة بالذات\nما بعرف كيف قدرت تكون بهالمكان وكأنها مرسومة لتكمّل الصورة\nتفصيل صغير يمكن بالنسبة إلك عادي\nبس بالنسبة إلي صار من التفاصيل اللي كل ما شفتها بقول بيني وبين حالي\nكيف ممكن لشي بسيط لهالدرجة يكون حلو لهالدرجة؟\n\nيمكن أجمل شي فيكي إنك ما بتحاولي تكوني جميلة\nالجمال عندك بيطلع بالتفاصيل من دون استئذان\nبنظرة\nبابتسامة\nوبتفصيل صغير مثل هالشامة\n\nولهالسبب أنا ما عم شوف مجرد صورة\nأنا عم شوف وجه كل تفصيل فيه عم يخليني انتبه أكتر\nوأحب أكتشف أكتر",
+
+      "وهون بصراحة ما عاد فيني مثّل إني عادي\n\nأول مرة شفت عيونك قلت يمكن مجرد إعجاب\nبعدين إجت هالصورة وشفت الشامة وقلت يمكن هالتفصيل هو اللي شدني\nوبعدين شفتك بالفيديو وفهمت إنو المشكلة مو بتفصيل واحد فيكي\n\nالمشكلة إنك كاملة بتفاصيلك\n\nعيونك إلها حكاية\nابتسامتك إلها تأثير\nوطريقتك بالحركة والحكي إلها شي خاص ما بعرف كيف أوصفه\n\nوالأغرب إنو كل ما حاولت اختصر شعوري بكلمة\nبلاقي الكلمة أصغر منك\n\nيعني شو بدي قلك؟\nإنك حلوة؟\nهاي قليلة\nإنك بتلفتي النظر؟\nكمان قليلة\nإنك عالقة ببالي؟\nهاي أقرب للحقيقة بس لسا ما قالت كل شي\n\nيمكن الحقيقة إنو من أول نظرة لعيونك\nصار عندي فضول أعرف البنت اللي ورا هالعيون\nومن بعدها كل تفصيل جديد فيكي كان عم يزيد إعجابي بدل ما يخففه\n\nوبصراحة\nإذا كانت هاي البداية بس\nفأنا خايف أعرف لوين ممكن يوصلني هالإعجاب فيكي\n\nلأنك مو من النوع اللي الواحد بيشوفه وبيقول حلوة وخلاص\nإنتِ من النوع اللي الواحد بيشوفه\nوبعد ما يبعد عنه بيضل يسأل حاله\nليش لسا عم فكر فيها؟"
+    ];
+    const mediaItems = document.querySelectorAll('.media-item');
+    const buttons = document.querySelectorAll('.nav-btn');
+    const quoteText = document.getElementById('quoteText');
+    const video = document.getElementById('myVideo');
+
+    function showTab(index) {
+      // إيقاف الفيديو عند الانتقال لزر آخر
+      if (index !== 2 && !video.paused) {
+        video.pause();
+      }
+
+      // تحديث شكل الأزرار
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttons[index].classList.add('active');
+
+      // تحديث الصورة / الفيديو
+      mediaItems.forEach(item => item.classList.remove('active'));
+      mediaItems[index].classList.add('active');
+
+      // تحديث النص مع تأثير حركة بسيط
+      quoteText.style.animation = 'none';
+      quoteText.offsetHeight; 
+      quoteText.style.animation = 'fadeIn 0.6s ease forwards';
+      quoteText.innerText = quotes[index];
+    }
+
+    // إظهار النص الأول فور التحميل
+    quoteText.innerText = quotes[0];
+  </script>
+
+</body>
+</html>
